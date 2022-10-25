@@ -1,6 +1,4 @@
-import java.util.Arrays;
-
-public class P2352 {
+public class Solution {
 	public int equalPairs(int[][] grid) {
 		int n = grid.length;
 		int count = 0;
