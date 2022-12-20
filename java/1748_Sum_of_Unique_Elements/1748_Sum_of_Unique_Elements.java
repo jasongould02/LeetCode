@@ -1,15 +1,14 @@
 class Solution {
     public int sumOfUnique(int[] nums) {
-        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+        int[] values = new int[101];
         for (int i : nums) {
-            map.merge(i, 1, Integer::sum);
+            values[i] += 1;
         }
-        int total = 0;
-        for (Integer key : map.keySet()) {
-            if (map.get(key) == 1) {
-                total += key;
+        for (int i = 1; i < values.length; i++) {
+            if (values[i] == 1) {
+                values[0] += i;
             }
         }
-        return total;
+        return values[0];
     }
 }
