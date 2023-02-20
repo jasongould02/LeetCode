@@ -1,2 +1,4 @@
-SELECT Email FROM (SELECT email, COUNT(email) AS num FROM Person
-GROUP BY email) AS Duplicates WHERE num > 1;
+# Write your MySQL query statement below
+SELECT email FROM Person
+GROUP BY Person.email
+HAVING COUNT(Person.email) > 1;
